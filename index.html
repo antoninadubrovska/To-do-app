@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Smart To-Do App</title>
+	<link rel="stylesheet" href="./style/style.css">
+	<script type="module" src="./src/index.js"></script>
+</head>
+<body>
+
+	<!-- ========== APP CONTAINER ========== -->
+	<div class="todo-app">
+
+		<!-- ========== HEADER ========== -->
+		<header class="todo-header">
+			<h1 class="todo-title">Smart To-Do</h1>
+			<!-- Task counter displays number of remaining tasks -->
+			<p class="task-counter">
+				<span class="counter-number">0</span> tasks remaining
+			</p>
+		</header>
+
+		<!-- ========== MAIN CONTENT ========== -->
+		<main class="todo-main">
+
+			<!-- ===== TASK INPUT SECTION ===== -->
+			<section class="task-input-section" aria-label="Add new task">
+				<form class="task-form">
+
+					<!-- Task description input -->
+					<div class="form-group">
+						<label for="taskInput" class="visually-hidden">Task description</label>
+						<input
+						type="text"
+						id="taskInput"
+						class="task-input"
+						placeholder="What needs to be done?"
+						required
+						autocomplete="off"
+						>
+					</div>
+
+					<!-- Due date input (optional) -->
+					<div class="form-group">
+						<label for="dueDateInput" class="visually-hidden">Due date (optional)</label>
+						<input
+						type="date"
+						id="dueDateInput"
+						class="due-date-input"
+						>
+					</div>
+
+					<!-- Submit button -->
+					<button type="submit" class="btn btn-primary">
+						Add Task
+					</button>
+				</form>
+			</section>
+
+			<!-- ===== FILTER SECTION ===== -->
+			<section class="filter-section" aria-label="Filter tasks">
+				<div class="filter-group" role="group" aria-label="Task filters">
+					<button type="button" class="btn btn-filter active" aria-pressed="true">
+						All
+					</button>
+					<button type="button" class="btn btn-filter" aria-pressed="false">
+						Active
+					</button>
+					<button type="button" class="btn btn-filter" aria-pressed="false">
+						Completed
+					</button>
+				</div>
+			</section>
+
+			<!-- ===== TASK LIST SECTION ===== -->
+			<section class="task-list-section" aria-label="Task list">
+
+				<!-- Task list container -->
+				<ul class="task-list" role="list">
+					<!--
+					Task items will be added here dynamically.
+					Example structure for a single task:
+
+					<li class="task-item">
+						<input type="checkbox" class="task-checkbox" id="task-1">
+						<label for="task-1" class="task-label">
+							<span class="task-title">Example task</span>
+							<span class="task-due-date">Due: 2024-12-25</span>
+						</label>
+						<button type="button" class="btn btn-delete">Delete</button>
+					</li>
+					-->
+				</ul>
+
+				<!-- Empty state message shown when no tasks exist -->
+				<div class="empty-state">
+					<p class="empty-state-text">No tasks yet. Add one above!</p>
+				</div>
+
+			</section>
+		</main>
+
+		<!-- ========== FOOTER ========== -->
+		<footer class="todo-footer">
+			<button type="button" class="btn btn-secondary">
+				Clear Completed
+			</button>
+			<p class="todo-credit">
+				Built for learning
+			</p>
+		</footer>
+
+	</div>
+	<!-- END .todo-app -->
+
+</body>
+</html>
