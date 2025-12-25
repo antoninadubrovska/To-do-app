@@ -6,6 +6,7 @@
 	<title>Smart To-Do App</title>
 	<link rel="stylesheet" href="./style/style.css">
 	<script type="module" src="./src/index.js"></script>
+
 </head>
 <body>
 
@@ -29,7 +30,7 @@
 				<form class="task-form">
 
 					<!-- Task description input -->
-					<div class="form-group">
+					<div class="form-group form-group-title">
 						<label for="taskInput" class="visually-hidden">Task description</label>
 						<input
 						type="text"
@@ -51,6 +52,16 @@
 						>
 					</div>
 
+					<!-- Priority select -->
+					<div class="form-group">
+						<label for="priorityInput" class="visually-hidden">Priority</label>
+						<select id="priorityInput" class="priority-input">
+							<option value="medium">Medium</option>
+							<option value="high">High</option>
+							<option value="low">Low</option>
+						</select>
+					</div>
+
 					<!-- Submit button -->
 					<button type="submit" class="btn btn-primary">
 						Add Task
@@ -70,6 +81,12 @@
 					<button type="button" class="btn btn-filter" aria-pressed="false">
 						Completed
 					</button>
+					<button type="button" class="btn btn-filter" aria-pressed="false">
+						Today
+					</button>
+					<button type="button" class="btn btn-filter" aria-pressed="false">
+						Upcoming
+					</button>
 				</div>
 			</section>
 
@@ -78,19 +95,7 @@
 
 				<!-- Task list container -->
 				<ul class="task-list" role="list">
-					<!--
-					Task items will be added here dynamically.
-					Example structure for a single task:
-
-					<li class="task-item">
-						<input type="checkbox" class="task-checkbox" id="task-1">
-						<label for="task-1" class="task-label">
-							<span class="task-title">Example task</span>
-							<span class="task-due-date">Due: 2024-12-25</span>
-						</label>
-						<button type="button" class="btn btn-delete">Delete</button>
-					</li>
-					-->
+					<!-- Task items will be added here dynamically -->
 				</ul>
 
 				<!-- Empty state message shown when no tasks exist -->
@@ -113,6 +118,8 @@
 
 	</div>
 	<!-- END .todo-app -->
+
+	<!-- JavaScript - loaded at end for performance -->
 
 </body>
 </html>
