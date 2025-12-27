@@ -1,532 +1,583 @@
 /* =============================================
-   SMART TO-DO APP - CSS
-   Mobile-First | Flexbox | Enhanced Features
-   ============================================= */
+SMART TO-DO APP - CSS
+Mobile-First | Flexbox | Enhanced Features
+============================================= */
 
 /* -----------------------------------------
-   RESET & BASE STYLES
-   ----------------------------------------- */
+RESET & BASE STYLES
+----------------------------------------- */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
+:root {
+	--bg-soft: #f8fafc;
+	--card-bg: #ffffff;
+	--primary-soft: #5dade2;
+	--text-soft: #4a5568;
+	--shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+
 html {
-  font-size: 16px;
-  line-height: 1.5;
+	font-size: 16px;
+	line-height: 1.5;
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  background-color: #f5f5f5;
-  color: #333;
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 1rem;
+	background-color: var(--bg-soft);
+	color: #333;
 }
 
 /* -----------------------------------------
-   APP CONTAINER
-   ----------------------------------------- */
+APP CONTAINER
+----------------------------------------- */
 .todo-app {
-  width: 100%;
-  max-width: 600px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	width: 100%;
+	max-width: 600px;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+	background-color: var(--card-bg);
+	padding: 1.5rem;
+	border-radius: 0.5rem;
+	box-shadow: 0 2px 10px var(--shadow-soft)
 }
 
 /* -----------------------------------------
-   HEADER SECTION
-   ----------------------------------------- */
+HEADER SECTION
+----------------------------------------- */
 .todo-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 1rem 0;
 }
 
 .todo-header h1 {
-  font-size: 1.75rem;
-  font-weight: 700;
-  color: #2c3e50;
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: #2c3e50;
 }
 
 .task-counter {
-  font-size: 0.875rem;
-  color: #666;
+	font-size: 0.875rem;
+	color: #666;
 }
 
 .counter-number {
-  font-weight: 700;
-  color: #3498db;
+	font-weight: 700;
+	color: #3498db;
 }
 
 /* -----------------------------------------
-   MAIN CONTENT AREA
-   ----------------------------------------- */
+MAIN CONTENT AREA
+----------------------------------------- */
 .todo-main {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
 }
 
 /* -----------------------------------------
-   TASK INPUT FORM
-   ----------------------------------------- */
+TASK INPUT FORM
+----------------------------------------- */
 .task-input-section {
-  width: 100%;
+	width: 100%;
 }
 
 .task-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
 }
 
 .form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
 }
 
 .form-group input,
 .form-group select {
-  padding: 0.75rem;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
-  background-color: #fff;
-  transition: border-color 0.2s, box-shadow 0.2s;
+	padding: 0.75rem;
+	font-size: 1rem;
+	border: 1px solid #ddd;
+	border-radius: 0.25rem;
+	background-color: #fff;
+	transition: border-color 0.2s, box-shadow 0.2s;
 }
 
 .form-group input:focus,
 .form-group select:focus {
-  outline: none;
-  border-color: #3498db;
-  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+	outline: none;
+	border-color: #3498db;
+	box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
 }
 
 .priority-input {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 /* -----------------------------------------
-   BUTTON STYLES
-   ----------------------------------------- */
+BUTTON STYLES
+----------------------------------------- */
 .btn {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
-  background-color: #fff;
-  color: #333;
-  transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+	padding: 0.5rem 1rem;
+	font-size: 1rem;
+	font-weight: 500;
+	cursor: pointer;
+	border: 1px solid #ddd;
+	border-radius: 0.25rem;
+	background-color: #fff;
+	color: #333;
+	transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
 }
 
 .btn:hover {
-  background-color: #f0f0f0;
-  transform: translateY(-1px);
+	background-color: #f0f0f0;
+	transform: translateY(-1px);
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
 }
 
 .btn:active {
-  transform: translateY(0);
+	transform: translateY(0);
 }
 
 .btn-primary {
-  padding: 0.75rem 1rem;
-  background-color: #3498db;
-  border-color: #3498db;
-  color: #fff;
+	padding: 0.75rem 1rem;
+	background-color: #3498db;
+	border-color: #3498db;
+	color: #fff;
+	background: linear-gradient(135deg, #5dade2, #3498db);
 }
 
 .btn-primary:hover {
-  background-color: #2980b9;
-  border-color: #2980b9;
+	background-color: #2980b9;
+	border-color: #2980b9;
 }
 
 .btn-filter {
-  font-size: 0.875rem;
-  padding: 0.5rem 0.75rem;
+	font-size: 0.875rem;
+	padding: 0.5rem 0.75rem;
 }
 
 .btn-filter.active {
-  background-color: #3498db;
-  border-color: #3498db;
-  color: #fff;
+	background-color: #3498db;
+	border-color: #3498db;
+	color: #fff;
 }
 
 .btn-secondary {
-  font-size: 0.875rem;
-  color: #e74c3c;
-  border-color: #e74c3c;
+	font-size: 0.875rem;
+	color: #e74c3c;
+	border-color: #e74c3c;
 }
 
 .btn-secondary:hover {
-  background-color: #e74c3c;
-  color: #fff;
+	background-color: #e74c3c;
+	color: #fff;
 }
 
 .btn-delete {
-  padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
-  background: transparent;
-  border: none;
+	padding: 0.25rem 0.5rem;
+	font-size: 0.875rem;
+	background: transparent;
+	border: none;
 }
 
 .btn-delete:hover {
-  transform: scale(1.1);
-  background: transparent;
+	transform: scale(1.1);
+	background: transparent;
 }
 
 .btn-edit {
-  padding: 0.25rem 0.5rem;
-  font-size: 0.875rem;
-  background: transparent;
-  border: none;
+	padding: 0.25rem 0.5rem;
+	font-size: 0.875rem;
+	background: transparent;
+	border: none;
 }
 
 .btn-edit:hover {
-  transform: scale(1.1);
-  background: transparent;
+	transform: scale(1.1);
+	background: transparent;
 }
 
 .btn-save-edit {
-  font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
-  background-color: #27ae60;
-  border-color: #27ae60;
-  color: #fff;
+	font-size: 0.75rem;
+	padding: 0.25rem 0.5rem;
+	background-color: #27ae60;
+	border-color: #27ae60;
+	color: #fff;
 }
 
 .btn-save-edit:hover {
-  background-color: #219a52;
+	background-color: #219a52;
 }
 
 .btn-cancel-edit {
-  font-size: 0.75rem;
-  padding: 0.25rem 0.5rem;
+	font-size: 0.75rem;
+	padding: 0.25rem 0.5rem;
 }
 
 /* -----------------------------------------
-   VISUALLY HIDDEN (accessibility)
-   ----------------------------------------- */
+VISUALLY HIDDEN (accessibility)
+----------------------------------------- */
 .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
 }
 
 /* -----------------------------------------
-   FILTER BUTTONS
-   ----------------------------------------- */
+FILTER BUTTONS
+----------------------------------------- */
 .filter-section {
-  width: 100%;
+	width: 100%;
 }
 
 .filter-group {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	justify-content: center;
 }
 
 /* -----------------------------------------
-   TASK LIST SECTION
-   ----------------------------------------- */
+TASK LIST SECTION
+----------------------------------------- */
 .task-list-section {
-  width: 100%;
+	width: 100%;
 }
 
 .task-list {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	list-style: none;
 }
 
 .task-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
-  background-color: #fff;
-  transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.75rem;
+	padding: 0.75rem;
+	border: 1px solid #ddd;
+	border-radius: 0.5rem;
+	background-color: #fff;
+	transition: background-color 0.2s, transform 0.15s, box-shadow 0.2s;
 }
 
+/* .task-item:hover {
+background-color: #f9f9f9;
+transform: translateY(-2px);
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+} */
+
 .task-item:hover {
-  background-color: #f9f9f9;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	background-color: #fcfcfd;
+	transform: translateY(-1px);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
 }
 
 /* Priority Borders */
 .task-item.high {
-  border-left: 4px solid #e74c3c;
+	border-left: 4px solid #e74c3c;
 }
 
 .task-item.medium {
-  border-left: 4px solid #f39c12;
+	border-left: 4px solid #f39c12;
 }
 
 .task-item.low {
-  border-left: 4px solid #27ae60;
+	border-left: 4px solid #27ae60;
 }
 
 /* Overdue Task */
 .task-item.overdue {
-  background-color: #fff5f5;
+	background-color: #fff5f5;
 }
 
 .task-checkbox {
-  flex-shrink: 0;
-  width: 1.25rem;
-  height: 1.25rem;
-  cursor: pointer;
-  accent-color: #3498db;
+	flex-shrink: 0;
+	width: 1.25rem;
+	height: 1.25rem;
+	cursor: pointer;
+	accent-color: #3498db;
 }
 
 .task-content {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  gap: 0.25rem;
-  min-width: 0;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	gap: 0.25rem;
+	min-width: 0;
 }
 
 .task-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.5rem;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem;
 }
 
 .task-title {
-  font-size: 1rem;
-  word-wrap: break-word;
+	font-size: 1rem;
+	word-wrap: break-word;
+	font-weight: 600;
+	margin-bottom: 0.4rem;
 }
 
 /* Priority Badge */
 .task-priority {
-  font-size: 0.625rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 0.125rem 0.375rem;
-  border-radius: 0.25rem;
-  color: #fff;
+	min-width: 64px;            /* alignment fix */
+	text-align: center;
+	font-size: 0.625rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	padding: 0.125rem 0.375rem;
+	border-radius: 0.25rem;
+	color: #fff;
+	transform: translateY(-1px);
 }
 
 .priority-high {
-  background-color: #e74c3c;
+	background: linear-gradient(135deg, #ff6b6b, #e74c3c);
+	box-shadow: 0 2px 6px rgba(231, 76, 60, 0.4);
 }
 
 .priority-medium {
-  background-color: #f39c12;
+	background: linear-gradient(135deg, #f6c667, #f39c12);
+	box-shadow: 0 2px 6px rgba(243, 156, 18, 0.35);
 }
 
 .priority-low {
-  background-color: #27ae60;
+	background: linear-gradient(135deg, #6ddf9c, #27ae60);
+	box-shadow: 0 2px 6px rgba(39, 174, 96, 0.35);
 }
 
 /* Due Date Styling */
 .task-due-date {
-  font-size: 0.75rem;
-  font-style: italic;
-  color: #888;
+	/* margin-left: auto; */
+	margin-right: 1rem;
+	font-size: 0.75rem;
+	font-style: italic;
+	color: #888;
 }
 
 .task-due-date.overdue {
-  color: #e74c3c;
-  font-weight: 500;
+	color: #e74c3c;
+	font-weight: 500;
 }
 
 /* Task Actions */
 .task-actions {
-  display: flex;
-  flex-shrink: 0;
-  gap: 0.25rem;
+	display: flex;
+	flex-shrink: 0;
+	gap: 0.25rem;
 }
 
 /* Completed Task */
 .task-item.completed .task-title {
-  text-decoration: line-through;
-  opacity: 0.6;
+	text-decoration: line-through;
+	opacity: 0.6;
 }
 
 .task-item.completed .task-priority {
-  opacity: 0.5;
+	opacity: 0.5;
 }
 
 /* -----------------------------------------
-   EDIT FORM (inline)
-   ----------------------------------------- */
+EDIT FORM (inline)
+----------------------------------------- */
 .edit-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	width: 100%;
 }
 
 .edit-form input,
 .edit-form select {
-  padding: 0.5rem;
-  font-size: 0.875rem;
-  border: 1px solid #ddd;
-  border-radius: 0.25rem;
+	padding: 0.5rem;
+	font-size: 0.875rem;
+	border: 1px solid #ddd;
+	border-radius: 0.25rem;
 }
 
 .edit-form input:focus,
 .edit-form select:focus {
-  outline: none;
-  border-color: #3498db;
+	outline: none;
+	border-color: #3498db;
 }
 
 .edit-form input.error {
-  border-color: #e74c3c;
-  background-color: #fff5f5;
+	border-color: #e74c3c;
+	background-color: #fff5f5;
 }
 
 .edit-actions {
-  display: flex;
-  gap: 0.5rem;
+	display: flex;
+	gap: 0.5rem;
 }
 
 /* -----------------------------------------
-   EMPTY STATE
-   ----------------------------------------- */
+EMPTY STATE
+----------------------------------------- */
 .empty-state {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 2rem;
+	text-align: center;
+	animation: fadeIn 0.4s ease;
 }
 
 .empty-state[hidden] {
-  display: none;
+	display: none;
 }
 
 .empty-state p {
-  font-size: 1rem;
-  color: #888;
+	font-size: 1rem;
+	/* color: #888; */
+	color: #94a3b8;
+	font-style: italic;
+}
+
+.task-meta {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	flex-wrap: wrap;
 }
 
 /* -----------------------------------------
-   FOOTER SECTION
-   ----------------------------------------- */
+FOOTER SECTION
+----------------------------------------- */
 .todo-footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 0;
-  border-top: 1px solid #eee;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	padding: 1rem 0;
+	border-top: 1px solid #eee;
 }
 
 .todo-credit {
-  font-size: 0.75rem;
-  color: #888;
+	font-size: 0.75rem;
+	color: #888;
+}
+
+/* @keyframes */
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+		transform: translateY(4px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 
 /* -----------------------------------------
-   RESPONSIVE - TABLET & UP
-   ----------------------------------------- */
+RESPONSIVE - TABLET & UP
+----------------------------------------- */
 @media (min-width: 480px) {
-  body {
-    padding: 2rem;
-  }
+	body {
+		padding: 2rem;
+	}
 
-  .todo-header h1 {
-    font-size: 2rem;
-  }
+	.todo-header h1 {
+		font-size: 2rem;
+	}
 
-  .task-form {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: flex-end;
-  }
+	.task-form {
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: flex-end;
+	}
 
-  .form-group {
-    flex: 1;
-    min-width: 100px;
-  }
+	.form-group {
+		flex: 1;
+		min-width: 100px;
+	}
 
-  .form-group-title {
-    flex: 2;
-    min-width: 180px;
-  }
+	.form-group-title {
+		flex: 2;
+		min-width: 180px;
+	}
 
-  .task-form button[type="submit"] {
-    align-self: flex-end;
-  }
+	.task-form button[type="submit"] {
+		align-self: flex-end;
+	}
 
-  .task-item {
-    padding: 1rem;
-  }
+	.task-item {
+		padding: 1rem;
+	}
 
-  .edit-form {
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-  }
+	.edit-form {
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: center;
+	}
 
-  .edit-form input[type="text"] {
-    flex: 2;
-    min-width: 120px;
-  }
+	.edit-form input[type="text"] {
+		flex: 2;
+		min-width: 120px;
+	}
 
-  .edit-form input[type="date"],
-  .edit-form select {
-    flex: 1;
-    min-width: 90px;
-  }
+	.edit-form input[type="date"],
+	.edit-form select {
+		flex: 1;
+		min-width: 90px;
+	}
 
-  .edit-actions {
-    flex-shrink: 0;
-  }
+	.edit-actions {
+		flex-shrink: 0;
+	}
 }
 
 /* -----------------------------------------
-   RESPONSIVE - DESKTOP
-   ----------------------------------------- */
+RESPONSIVE - DESKTOP
+----------------------------------------- */
 @media (min-width: 768px) {
-  .todo-app {
-    gap: 2rem;
-    padding: 2rem;
-  }
+	.todo-app {
+		gap: 2rem;
+		padding: 2rem;
+	}
 
-  .todo-header {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
-  }
+	.todo-header {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: baseline;
+	}
 
-  .todo-footer {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+	.todo-footer {
+		flex-direction: row;
+		justify-content: space-between;
+	}
 }

@@ -313,6 +313,28 @@ function renderTaskList() {
 			dueDateHTML = '<span class="task-due-date' + (isOverdue ? ' overdue' : '') + '">Due: ' + formatDate(task.dueDate) + '</span>';
 		}
 
+		// 	// Build priority badge
+		// 	const priorityHTML = '<span class="task-priority priority-' + task.priority + '">' + capitalizeFirst(task.priority) + '</span>';
+
+		// 	li.innerHTML =
+		// 	'<input type="checkbox" class="task-checkbox" id="task-' + task.id + '"' +
+		// 	(task.completed ? ' checked' : '') + '>' +
+		// 	'<div class="task-content">' +
+		// 	'<div class="task-header">' +
+		// 	'<span class="task-title">' + escapeHTML(task.title) + '</span>' +
+		// 	priorityHTML +
+		// 	'</div>' +
+		// 	dueDateHTML +
+		// 	'</div>' +
+		// 	'<div class="task-actions">' +
+		// 	'<button type="button" class="btn btn-edit" title="Edit task">✏️</button>' +
+		// 	'<button type="button" class="btn btn-delete" title="Delete task">🗑️</button>' +
+		// 	'</div>';
+
+		// 	elements.taskList.appendChild(li);
+		// });
+		// 	}
+
 		// Build priority badge
 		const priorityHTML = '<span class="task-priority priority-' + task.priority + '">' + capitalizeFirst(task.priority) + '</span>';
 
@@ -322,9 +344,12 @@ function renderTaskList() {
 		'<div class="task-content">' +
 		'<div class="task-header">' +
 		'<span class="task-title">' + escapeHTML(task.title) + '</span>' +
+'</div>' +
+'<div class="task-meta">' +
 		priorityHTML +
-		'</div>' +
 		dueDateHTML +
+'</div>' +
+
 		'</div>' +
 		'<div class="task-actions">' +
 		'<button type="button" class="btn btn-edit" title="Edit task">✏️</button>' +
@@ -334,6 +359,7 @@ function renderTaskList() {
 		elements.taskList.appendChild(li);
 	});
 }
+
 
 function renderCounter() {
 	const activeTasks = tasks.filter(function(task) {
